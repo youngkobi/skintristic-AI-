@@ -1,0 +1,107 @@
+
+* {
+font-family: "RoobertTrial";
+}
+
+
+.Main__title{
+    font-size: 128px;
+    font-weight: 300;
+    line-height: 120px;
+    margin: 10% 8% 0 8%;
+}
+.main__subtitle{
+    font-size: 128px;
+    font-weight: 300;
+    line-height: 120px;
+    margin: 0 24%;
+}
+
+html{
+    overflow: hidden;
+}
+
+.container{
+       padding: 96px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+.main__sidesquare{
+    border: dotted;
+    width: 602px;
+    height: 602px;
+    position: absolute;
+    left: -30%;
+  transform:rotate(45deg);
+}
+.main__sidesquare-right{
+    border: dotted;
+    width: 602px;
+    height: 602px;
+    position: absolute;
+    right: -30%;
+  transform:rotate(45deg)
+}
+
+.main__sidetitles{
+    position: absolute;
+    left: 5%;
+    top: 50%;
+   align-items: center;
+    display: flex;
+    gap: 5px;
+}
+.main__sidetitles-right{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+}
+
+.button__flip{
+    transform:scaleX(-1) ;
+}
+
+.disclamier{
+    width: 316px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    height: 72px;
+    margin-top: 3%;
+}
+
+.title__wrapper{
+    margin: 0 auto;
+}
+
+.button__img:hover{
+    transform: scale(1.1);
+}
+.button__flip:hover{
+    transform: scale(-1.1);
+    
+}
+
+.button__img{
+    transition: all ease-in-out ;
+}
+.flip{
+    transition: all ease-in-out ;
+}
+
+.main__sidetitles:hover .button__img{
+  transform: scale(1.1);
+}
+.main__sidetitles-right:hover .button__flip{
+  transform: scale(-1.1);
+}
