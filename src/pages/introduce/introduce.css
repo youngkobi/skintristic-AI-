@@ -11,6 +11,7 @@
      text-align: center;
 }
 
+
 .container{
        padding: 96px 0;
 }
@@ -86,8 +87,21 @@
         top: 35%;
         left: 42%;
     }
+    .intro-main__subtitle-empty{
+        position: absolute;
+        opacity: 40%;
+        top: 30%;
+        left: 42%;
+        color: red;
+    }
 
 
     .back:hover .button__img{
   transform: scale(1.1);
+}
+
+.process__tag{
+  color: #A0A4AB;
+  position: absolute;
+  top: 25%;
 }

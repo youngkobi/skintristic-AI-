@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const [pushleft, setPushleft] = useState(false);
   const [pushright, setPushright] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleHoverleft() {
     setPushleft(true);
@@ -25,39 +25,42 @@ const Home = () => {
   return (
     <>
       <div className="main__wrapper-">
-        {/* {pushright ? null : }
-        {pushleft ? null : } */}
-<div className="main__sidesquare"></div>
-<div className="main__sidesquare-right"></div>
+        {pushright ? null :  <div className="main__sidesquare"></div>}
+        {pushleft ? null :         <div className="main__sidesquare-right"></div>}
+       
+
         <div className="container">
           <div className="row">
-         
             <div
               className="main__sidetitles"
-              onMouseOver={() => handleHoverleft()}
-              onMouseLeave={() => hanldeHoverleftLeave()}
+              onMouseOver={() => setPushleft(true)}
+              onMouseLeave={() => setPushleft(false)}
+              style={{ opacity: pushright ? 0 : 1 }}
             >
               <img src={button} alt="" className="button__img" />
               Discover A.I.
             </div>
-          
-              <div
-                className="main__sidetitles-right"
-                onMouseOver={() => handleHoverright()}
-                onMouseLeave={() => handlehoverrightleave()}
-              >
-                Take Test
-                <img src={button} alt="" className="button__flip" 
-                onClick={()=>navigate('/introduce')}/>
-              </div>
-        
+
+            <div
+              className="main__sidetitles-right"
+              onMouseOver={() => setPushright(true)}
+              onMouseLeave={() => setPushright(false)}
+              style={{ opacity: pushleft ? 0 : 1 }}
+            >
+              Take Test
+              <img
+                src={button}
+                alt=""
+                className="button__flip"
+                onClick={() => navigate("/introduce")}
+              />
+            </div>
+
             <h1 className="Main__title">Sophisticated</h1>
             <div className="main__subtitle">Skincare</div>
-        
-        
+          </div>
         </div>
       </div>
-        </div>
       <p className="disclamier">
         Skinstric developed an A.I. that creates a highly-personalised routine
         tailored to what your skin needs.

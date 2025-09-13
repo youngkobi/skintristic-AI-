@@ -142,16 +142,3 @@ html {
 .main__sidetitles-right:hover~.main__subtitle {
     transform: translateX(-400px)
 }
-
-
-
-
-
-
-.main__sidetitles:hover ~ .main__sidetitles-right{
-    opacity: 0;
-}
-
-.main__sidetitles-right:hover ~ .main__sidetitles{
-    opacity: 0;
-}
