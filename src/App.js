@@ -8,9 +8,7 @@ import { useEffect } from 'react';
 
 function App() {
 
-  useEffect(()=>(
-Aos.init()
-  ), [])
+ 
   return (
 <Router>
   <Nav/>
