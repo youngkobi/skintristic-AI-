@@ -12,9 +12,9 @@
 }
 
 
-.container{
-       padding: 96px 0;
-}
+/* .container{
+       padding: 54px 0;
+} */
 
 .row {
     width: 100%;
@@ -25,8 +25,7 @@
 .box{
     border: dotted;
     border-width: medium;
-    width: 402px;
-    height: 402px;
+  
   margin: 0 auto;
   transform: rotate(35deg);
      position: absolute;
@@ -38,8 +37,7 @@
 .box2{
     border: dotted;
     border-width: medium;
-    width: 452px;
-    height: 452px;
+    
   transform: rotate(38deg);
       position: absolute;
      left: 28%;
@@ -53,8 +51,7 @@
 .box3{
     border: dotted;
     border-width: medium;
-    width: 502px;
-    height: 502px;
+   
   transform: rotate(40deg);
       position: absolute;
      left: 26%;
@@ -75,17 +72,52 @@
       }
     }
 
-
     .back__button{
         display: flex;
+        align-items: center;
         gap: 15px;
+        cursor: pointer;
+        width: 5px;
     }
+    .progo__button{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        width: 5px;
+       
+    }
+ 
 
+    .bottom__buttons{
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0px;
+      left: 0; /* Or right: 0, or both for full width */
+      width: 1380px;
+      margin-left: 1%;
+
+    }
     .intro-main__subtitle{
         position: absolute;
         opacity: 40%;
         top: 35%;
         left: 42%;
+    }
+    .intro-main__subtitle-load{
+        position: absolute;
+        opacity: 40%;
+        top: 35%;
+        left: 39%;
+    }
+    .intro-main__subtitle-success{
+        position: absolute;
+        opacity: 80%;
+        top: 35%;
+        left: 39%;
+        margin-top: 15px;
+        font-size: 18px;
     }
     .intro-main__subtitle-empty{
         position: absolute;
@@ -99,9 +131,69 @@
     .back:hover .button__img{
   transform: scale(1.1);
 }
+    .proceed:hover .button__flip{
+  transform: scale(1.1);
+}
+.button__flip {
+    transform: scaleX(-1) !important;
+     cursor: pointer;
+     transition: all ease-in-out;
+     z-index: 30;
+}
 
 .process__tag{
   color: #A0A4AB;
   position: absolute;
   top: 25%;
+}
+
+.succes__title{
+  font-size: 24px;
+  position: absolute;
+  top: 25%;
+  left: 41%;
+}
+
+@media(min-width:1600px){
+   .progo__button{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        width: 5px;
+       
+    }
+ 
+
+    .bottom__buttons{
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0px;
+      left: 0; /* Or right: 0, or both for full width */
+      width: 1750px;
+      margin-left: 1%;
+
+    }
+}
+
+@media(max-width:1450px){
+  .bottom__buttons{
+    width: 1200px;
+  }
+  
+}
+
+@media(max-width:1200px){
+   .bottom__buttons{
+    width: 1000px;
+  }
+  
+}
+
+@media (max-width:900px) {
+   .bottom__buttons{
+    width: 600px;
+  }
+  
 }

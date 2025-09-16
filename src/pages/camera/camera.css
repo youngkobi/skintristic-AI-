@@ -1,0 +1,87 @@
+.camera-container {
+  width: 100vw; /* Take full viewport width */
+  height: 100vh; /* Take full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide any overflow */
+  position: relative;
+}
+
+.webcam {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+ margin-top: -50px;
+ margin-left: -1%;
+}
+
+.camera__button{
+    background: transparent;
+    position: absolute;
+    border: none;
+    right: 2%;
+}
+
+.retake__button{
+    position: absolute;
+    left: 43%;
+    bottom: 10%;
+      padding: 1%;
+}
+
+.continue__button{
+    position: absolute;
+    right: 43%;
+    bottom: 10%;
+    padding: 1%;
+    background-color: black;
+    color: white;
+}
+
+.picture__button--label{
+    position: absolute;
+    right: 7%;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.great__shot{
+    color: white;
+    position: absolute;
+    top: 20%;
+}
+
+.preview__title{
+    position: absolute;
+    color: white;
+    top: 70%;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.diamond-list{
+    position: absolute;
+    bottom: 30%;
+    display: flex;
+    gap: 3%;
+    list-style-type: none;
+    width: 100%;
+    margin-left: 67%;
+    color: white;
+    font-size: 12px;
+    
+}
+.camera__pretitle{
+    position: absolute;
+    bottom: 36%;
+    color: white;
+    font-size: 16px;
+}
+.diamond-list li::before {
+  content: "◇"; /* The custom character */
+
+  left:0;
+  color: white; /* Custom color for the bullet */
+}

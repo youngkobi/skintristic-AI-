@@ -1,0 +1,113 @@
+/* DiamondLayout.css */
+.diamond-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for a 2x2 grid */
+  grid-template-rows: 1fr 1fr;    /* Two rows */
+  width: 400px; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  position: relative;
+  /* Further adjustments for centering if needed */
+  margin: 50px auto; 
+}
+
+.diamond-item {
+  width: 100%;
+  height: 100%;
+  background-color: #F3F3F4; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; 
+  overflow: hidden; 
+  position: relative; 
+  transition: all 300ms ease;
+}
+
+.diamond-item:hover{
+    transform: scale(1.1);
+  
+}
+
+/* Rotate the container for the diamond effect */
+.diamond-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 315px;
+  height: 315px;
+  position: relative;
+  margin: 50px auto;
+  transform: rotate(45deg);
+  transform-origin: center center;
+ z-index: 5;
+  gap: 11px; 
+
+}
+
+
+/* Counter-rotate content to keep text upright */
+.diamond-content {
+  transform: rotate(-45deg);
+  text-align: center;
+  padding: 1px;
+  color: #333;
+  font-weight: bold;
+  line-height: 25px;
+  
+}
+
+
+
+/* Refinements for the central overlap/meeting point */
+
+
+.select__infobox--title{
+    font-size: 16px;
+    line-height: 1px;
+}
+.select__infobox--para{
+    font-size: 14px;
+    line-height: 28px;
+
+}
+
+.select__infobox{
+    margin-left: 10px;
+}
+
+.diamond-1{
+    background-color: #E1E1E2;
+}
+
+.hover__dotted{
+border: dotted;
+width: 60vh;
+height: 60vh;
+  margin: 0 auto;
+  transform: translateY(-425px) rotate(45deg);
+  z-index: -1;
+/* animation: grow 2s 1 alternate; */
+
+}
+
+/* .diamond-item:hover .hover__dotted{
+    
+
+}
+@keyframes grow {
+ 
+  from {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(.5);
+    opacity: 50%;
+
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 100%;
+  }
+} */
