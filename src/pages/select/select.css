@@ -79,15 +79,27 @@
     background-color: #E1E1E2;
 }
 
-.hover__dotted{
+/* .hover__dotted{
 border: dotted;
+
+  z-index: -1;
+
+} */
+
+.hover__dotted {
 width: 60vh;
 height: 60vh;
   margin: 0 auto;
-  transform: translateY(-425px) rotate(45deg);
-  z-index: -1;
-/* animation: grow 2s 1 alternate; */
+  border: 2px dashed #6415ff;
+  border-radius: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(0.9) translateY(-425px) rotate(45deg);
+  opacity: 0;
+}
 
+.hover__dotted--active {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
 /* .diamond-item:hover .hover__dotted{

@@ -34,9 +34,7 @@ Fix estimated information if needed.</p>
         <div className="diamond-content">WEATHER</div>
       </div>
     </div>
-    {boxxy && <div 
-    // style={{ transform: boxxy ? "translateX(-300px)" : 0 }}
-className="hover__dotted"></div>}
+   <div className={`hover__dotted ${boxxy ? "hover__dotted--active" : ""}`}></div>
     </>
   );
 };
