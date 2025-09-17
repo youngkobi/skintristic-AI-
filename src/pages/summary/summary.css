@@ -1,0 +1,251 @@
+.demographics-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.header {
+  padding: 5px;
+  padding-left: 15px;
+  padding-bottom: 60px;
+  background-color: #fff;
+  height: 15%;
+
+}
+
+.header h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.header h2 {
+  font-size: 72px;
+  line-height: 64px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.header h3 {
+  font-size: 1em;
+  color: #777;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.content-area {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sidebar {
+  width: 180px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 80%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.sidebar-item {
+  padding: 15px 20px;
+  background-color: #333;
+height: 12%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: solid black;
+  
+}
+
+.sidebar-item.active {
+  background-color: #000;
+  font-weight: bold;
+  
+}
+.sidebar-item.active .label{
+color: white;  
+}
+
+.sidebar-item .label {
+  font-size: 16px;
+  color: black;
+}
+
+.sidebar-item .value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.value{
+    line-height: 20px;
+}
+
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.predicted-race-display {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 400;
+  border: 1px solid #eee;
+}
+
+.chart-section {
+  display: flex;
+  align-items: center;
+  /* Reduced gap to make space for a smaller table */
+  gap: 20px; /* Reduced from 40px */
+  flex-grow: 1;
+  background-color: #fff;
+  justify-content: space-around;
+  
+  
+
+}
+
+.selected-race--display{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.donut-chart-container {
+  position: relative;
+  /* You can also make the donut chart slightly smaller if desired */
+  width: 900px; /* Reduced from 150px */
+  height:400px; /* Reduced from 150px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F3F3F4;
+  margin-top: 0%;
+  align-self: flex-start;
+  border-top: solid 1px;
+
+}
+
+.donut-chart {
+  height: 100%;
+  transform: rotate(-90deg); /* Start segment from top */
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+.donut-chart-background {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 3px; /* Adjust thickness */
+}
+
+.donut-chart-segment {
+  fill: none;
+  stroke: #333; /* Color of the active segment */
+  stroke-width: 3px; /* Adjust thickness */
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+.confidence-percentage {
+  position: absolute;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #333;
+  right: 25%;
+}
+
+.confidence-list-section {
+  background-color: #F3F3F4;
+  
+  border: 1px solid #eee;
+  flex-grow: 1;
+  margin-right: 20px;
+  border-top: solid 1px;
+  align-self: flex-start;
+  padding: 20px 20px;
+  height: 51vh;
+  
+
+}
+.main-content{
+    background-color: #FFF;
+}
+.content-area{
+    background-color: #FFF;
+    margin-top: 20px;
+}
+
+.confidence-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.confidence-list {
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+}
+
+.confidence-list li {
+  display: flex;
+  padding: 12px 0 12px 24px;
+   justify-content:space-between;
+   align-items: center;
+}
+
+
+.number__confidence{
+    
+}
+.confidence-list li:first-child .list-icon {
+  position: absolute;
+  left: 0vw;
+}
+
+
+.list-icon{
+
+}
+
+.list__wrapper{
+    position: relative;
+}
+
+.active-confidence-item {
+    font-weight: bold;
+    color: #000; /* Or a highlight color */
+}
+
+
+
+
+.footer-links span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+
+.item-2{
+    background-color: #E1E1E2;
+    color: black;
+}
+.item-3{
+    background-color: #F3F3F4;
+    color: black;
+}

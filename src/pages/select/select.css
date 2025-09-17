@@ -21,6 +21,7 @@
   overflow: hidden; 
   position: relative; 
   transition: all 300ms ease;
+  cursor: not-allowed;
 }
 
 .diamond-item:hover{
@@ -77,28 +78,25 @@
 
 .diamond-1{
     background-color: #E1E1E2;
+    cursor: pointer;
 }
 
-/* .hover__dotted{
-border: dotted;
-
-  z-index: -1;
-
-} */
 
 .hover__dotted {
-width: 60vh;
-height: 60vh;
+width: 55vh;
+height: 55vh;
   margin: 0 auto;
-  border: 2px dashed #6415ff;
-  border-radius: 12px;
+  border: 2px dashed #E1E1E2;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: scale(0.9) translateY(-425px) rotate(45deg);
+  transform: scale(0.9) rotate(45deg);
   opacity: 0;
+  position: absolute;
+  top: 24%;
+  left: 37.25%;
 }
 
 .hover__dotted--active {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(45deg) ;
   opacity: 1;
 }
 

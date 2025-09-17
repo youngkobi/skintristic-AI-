@@ -1,9 +1,11 @@
 
 import React, { useState } from 'react'
 import "./select.css"
+import { useNavigate } from 'react-router-dom';
 
-const Select = () => {
+const Select = ({apiSum, setApiSum}) => {
     const [boxxy, setBoxxy] = useState(false);
+    const navigate = useNavigate()
   return( 
   <>
 <div className="select__infobox">
@@ -15,7 +17,8 @@ Fix estimated information if needed.</p>
     <div className="diamond-grid-container">
       <div className="diamond-item top diamond-1"
       onMouseOver={() => setBoxxy(true)}
-        onMouseLeave={() => setBoxxy(false)}>
+        onMouseLeave={() => setBoxxy(false)}
+        onClick={()=>navigate('/summary')}>
         <div className="diamond-content ">DEMOGRAPHICS</div>
       </div>
       <div className="diamond-item left"
