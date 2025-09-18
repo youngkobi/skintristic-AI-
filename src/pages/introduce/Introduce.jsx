@@ -94,6 +94,7 @@ const Introduce = () => {
 
   return (
     <>
+        <h3 className="start__ANALYSIS">To Start Analysis</h3>
       <div className="container">
         <div className="row">
          <Spinningboxes box1={"402px"} box2={'452px'} box3={'502px'}/>

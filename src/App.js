@@ -12,7 +12,7 @@ import Summary from './pages/summary/Summary';
 
 function App() {
   const [cameraImg, setCameraImg] = useState("")
-  const [apiSum, setApiSum] = useState(null)
+  const [apiSum, setApiSum] = useState("")
 
   useEffect(()=>(
 Aos.init()
@@ -24,9 +24,9 @@ Aos.init()
     <Route path="/" element={<Home/>}/>
     <Route path="/introduce" element={<Introduce/>}/>
     <Route path="/select" element={<Select/>}/>
-    <Route path="/summary" element={<Summary/>}/>
-    <Route path="/capture" element={<Capture cameraImg={cameraImg} setCameraImg={setCameraImg}/>} setApiSum={setApiSum} apiSum={apiSum}/>
-    <Route path="/camera" element={<CameraPage cameraImg={cameraImg} setCameraImg={setCameraImg}/>} setApiSum={setApiSum} apiSum={apiSum}/>
+    <Route path="/summary" element={<Summary setApiSum={setApiSum} apiSum={apiSum}/> } />
+    <Route path="/capture" element={<Capture cameraImg={cameraImg} setCameraImg={setCameraImg} setApiSum={setApiSum} apiSum={apiSum}/>} />
+    <Route path="/camera" element={<CameraPage cameraImg={cameraImg} setCameraImg={setCameraImg}/>} />
    
 
 </Routes>

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import "./select.css"
 import { useNavigate } from 'react-router-dom';
 
-const Select = ({apiSum, setApiSum}) => {
+const Select = () => {
     const [boxxy, setBoxxy] = useState(false);
     const navigate = useNavigate()
   return( 

@@ -3,6 +3,8 @@ import Webcam from "react-webcam";
 import "./camera.css"; // Import your CSS file
 import picture from "../../assets/takePictureIcon.webp";
 import { Navigate, useNavigate } from "react-router-dom";
+import button from "../../assets/buttin-icon-shrunk.svg";
+
 
 function CameraPage({cameraImg, setCameraImg}) {
   const webcamRef = useRef(null);
@@ -66,8 +68,31 @@ function CameraPage({cameraImg, setCameraImg}) {
           >
             Use this photo
           </button>
+         
         </>
+        
       )}
+       <div
+          className="back__button-camera"
+        >
+         
+          <div  >
+
+          <img
+            src={button}
+            alt=""
+            className="button__img"
+            onClick={() => navigate("/capture")}
+          
+          />
+
+          </div>
+           <div
+         
+           onClick={() => navigate("/capture")} className="back">
+            Back
+          </div>
+        </div>
     </div>
   );
 }

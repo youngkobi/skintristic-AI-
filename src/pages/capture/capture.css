@@ -109,3 +109,55 @@
         font-size: 22px;
         font-weight: 700;
 }
+
+.allow__modal{
+    position: absolute;
+    background-color: black;
+    color: white;
+    left: 40vh;
+    width: 350px;
+
+}
+
+.modal__title{
+font-size: 16px;
+padding-left: 20px;
+margin-bottom: 10vh;
+padding-top: 10px;
+justify-content: flex-end;
+}
+
+.modal__button1{
+color: #A0A4AB;
+background-color: transparent;
+border: none;
+cursor: pointer; 
+padding-bottom: 5px;
+}
+.modal__button1:hover{
+color:lightgray;
+}
+.modal__button2:hover{
+color:lightgray;
+}
+.modal__button2{
+background-color: transparent;
+border: none;
+cursor: pointer;
+padding-bottom: 5px;
+color: white;
+padding-left: 20px ;
+padding-right: 10px;
+}
+
+.allow__line{
+    height: 1px;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.button__wrapper-modal{
+    display: flex;
+    justify-content: flex-end;
+}

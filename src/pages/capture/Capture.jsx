@@ -43,6 +43,9 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
         setAnalyze(false);
         navigate("/select");
       setApiSum(responseData)
+      alert("Image anaylzed Succesfully!")
+     
+      
 
       }, 2000);
     }
@@ -74,14 +77,26 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
   };
 
   function handletakepictureclick() {
-    navigate("/camera");
+    setShowModal(true)
   }
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleOpenModal = () => {
+        setShowModal(true)};
+  const handleCloseModal = () => {
+    setShowModal(false)};
+  const handleCloseModal2 = () => {
+    setShowModal(false)
+    navigate('/camera')};
 
   //  useEffect(()=>(
 
   //   ), [])
   return (
     <div>
+        <h3 className="start__ANALYSIS">To Start Analysis</h3>
+
       <div className="container">
         <div className="row">
           {analyze ? (
@@ -90,6 +105,12 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
                 Preparing Your Analysis...
               </div>
               <Spinningboxes box1={"402px"} box2={"452px"} box3={"502px"} />
+              {base64String && (
+        <div style={{ marginTop: "20px" }}>
+          <h3>Image Preview:</h3>
+          <img src={imagePreviewUrl} alt="Preview" style={{ maxWidth: '300px' }} /> 
+        </div>
+      )}
             </>
           ) : (
             <div className="capture__wrapper">
@@ -104,6 +125,26 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
                   Allow A.I. <br />
                   to scan your face
                 </label>
+               <div>
+      
+      {showModal && 
+      <div 
+      className="allow__modal"
+      onClose={handleCloseModal}>
+        
+        <h1 
+        className="modal__title"
+        >ALLOW A.I. TO ACCESS YOUR CAMERA</h1>
+        <div className="allow__line"></div>
+        <div className="button__wrapper-modal"><button 
+        className="modal__button1"
+        onClick={handleCloseModal}>DENY</button>
+        <button 
+        className="modal__button2"
+        onClick={handleCloseModal2}>ALLOW</button>
+        </div>
+      </div>}
+    </div>
 
                 <div
                   style={{ width: "302px", height: "302px" }}
@@ -155,15 +196,7 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
         </div>
       </div>
 
-      {base64String && (
-        <div style={{ marginTop: "20px" }}>
-          <h3>Base64 Encoded String:</h3>
-          <textarea readOnly rows="5" cols="60" value={base64String} />
-
-          {/* <h3>Image Preview:</h3>
-          <img src={imagePreviewUrl} alt="Preview" style={{ maxWidth: '300px' }} /> */}
-        </div>
-      )}
+      
     </div>
   );
 };

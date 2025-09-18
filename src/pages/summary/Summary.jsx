@@ -42,7 +42,7 @@ const Summary = ({apiSum, setApiSum}) => {
     { race: 'Middle eastern', confidence: 2 },
     { race: 'Black', confidence: 1 },
   ];
-console.log(apiSum);
+console.log(apiSum.data);
 
   // Calculate the stroke-dasharray for the donut chart segment
   // For simplicity, we're focusing on the "East Asian" segment as in the image.
@@ -114,7 +114,7 @@ console.log(apiSum);
                 </div>
                 <ul className="confidence-list">
                     {raceConfidence.map((item, index) => (
-                        <div className='list__wrapper'>
+                        <div className='list__wrapper' key={index}>
                         
                     <li key={index} className={item.race === predictedData.race ? 'active-confidence-item' : ''}>
                         <span className="list-icon">◇</span>

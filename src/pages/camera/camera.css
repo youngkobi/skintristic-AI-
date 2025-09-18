@@ -85,3 +85,19 @@
   left:0;
   color: white; /* Custom color for the bullet */
 }
+
+.back__button-camera{
+       z-index: 5;
+       display: flex;
+       align-items: center;
+       position: absolute;
+       bottom: 10%;
+       left: 2%;
+       gap: 10px;
+       color: white;
+       
+    }
+
+    .back__button-camera .button__img{
+        filter: invert(100%);
+    }
