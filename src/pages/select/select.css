@@ -1,12 +1,11 @@
 /* DiamondLayout.css */
 .diamond-grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns for a 2x2 grid */
-  grid-template-rows: 1fr 1fr;    /* Two rows */
-  width: 400px; /* Adjust as needed */
-  height: 400px; /* Adjust as needed */
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr;    
+  width: 400px; 
+  height: 400px; 
   position: relative;
-  /* Further adjustments for centering if needed */
   margin: 50px auto; 
 }
 
@@ -100,24 +99,91 @@ height: 55vh;
   opacity: 1;
 }
 
-/* .diamond-item:hover .hover__dotted{
-    
 
+@media(min-width:1600px){
+  .diamond-grid-container {
+  width: 400px; 
+  height: 400px; 
 }
-@keyframes grow {
- 
-  from {
-    transform: scale(0);
-  }
+ .bottom__buttons{
+      left: 0; /* Or right: 0, or both for full width */
+      width: 90vw;
+      margin-left: 1%;
 
-  50% {
-    transform: scale(.5);
-    opacity: 50%;
+    }
+   .hover__dotted {
+width: 50vh;
+height: 50vh;
+  top: 18%;
+  left: 37.7%;
+}
 
-  }
+.hover__dotted--active {
+  transform: scale(1.1) rotate(45deg) ;
+  opacity: 1;
+}
+}
 
-  to {
-    transform: scale(1);
-    opacity: 100%;
-  }
-} */
+@media(max-width:1050px){
+  .diamond-grid-container {
+  width: 300px; 
+  height: 300px; 
+}
+ .bottom__buttons{
+      left: 0; /* Or right: 0, or both for full width */
+      width: 85vw;
+      margin-left: 1%;
+
+    }
+   .hover__dotted {
+width: 50vh;
+height: 50vh;
+  top: 26%;
+  left: 33%;
+}
+
+.hover__dotted--active {
+  transform: scale(1.1) rotate(45deg) ;
+  opacity: 1;
+}
+}
+@media(max-width:800px){
+
+ .bottom__buttons{
+      left: 0; /* Or right: 0, or both for full width */
+      width: 80vw;
+      margin-left: 1%;
+
+    }
+   .hover__dotted {
+width: 48vh;
+height: 48vh;
+  top: 26%;
+  left: 28%;
+}
+
+.hover__dotted--active {
+  transform: scale(1.1) rotate(45deg) ;
+  opacity: 1;
+}
+}
+@media(max-width:630px){
+
+ .bottom__buttons{
+      left: 0; /* Or right: 0, or both for full width */
+      width: 80vw;
+      margin-left: 1%;
+
+    }
+   .hover__dotted {
+width: 44vh;
+height: 44vh;
+  top: 26%;
+  left: 25%;
+}
+
+.hover__dotted--active {
+  transform: scale(1.1) rotate(45deg) ;
+  opacity: 1;
+}
+}

@@ -4,19 +4,68 @@ import axios from "axios";
 import button from "../../assets/buttin-icon-shrunk.svg";
 
 const Summary = ({ apiSum, setApiSum }) => {
+    const [base64String, setBase64String] = useState('');
+    const [selectedRace, setSelectedRace] = useState(null);
+    const [selectedSidebar, setSelectedSidebar] = useState("race");
      const [activeIndex, setActiveIndex] = useState(0);
      const [activeIndexAge, setActiveIndexAge] = useState(0);
      const [activeIndexG, setActiveIndexG] = useState(0);
+     
+  
+  // Effect #1: Converts the image to Base64
+  useEffect(() => {
+    const convertImageToBase64 = async (imageUrl) => {
+      try {
+        const response = await fetch(imageUrl);
+        const blob = await response.blob();
+
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setBase64String(reader.result);
+        };
+        reader.readAsDataURL(blob);
+      } catch (error) {
+        console.error('Error converting image to Base64:', error);
+      }
+    };
+    convertImageToBase64(button);
+  }, []); // The empty dependency array ensures this runs only once
+
+  // Effect #2: Triggers the API call when base64String is available
+  useEffect(() => {
+    // Only run this effect if base64String is not an empty string
+    if (base64String) {
+      proccesing();
+    }
+  }, [base64String]); // This dependency array watches for changes to base64String
+
+  const proccesing = () => {
+    const apiUrl =
+      "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo";
+    const postData = {
+      image: base64String,
+    };
+    axios.post(apiUrl, postData)
+      .then((response) => {
+        const summary = response.data;
+        setApiSum(summary.data);
+      })
+      .catch((error) => {
+        console.error("Error calling API:", error);
+      });
+  };
+
   // SIDEBAR REACTIVE CODE
    const [activeBox, setActiveBox] = useState(0); 
   const handleBoxClick = (index) => {
     setActiveBox(index);
   };
- 
+  
+  
+    
   if (!apiSum) {
     return <p>Loading data...</p>;
   }
-  
   
   // Now that we know apiSum is not null, it's safe to process
   const entriesArray = Object.entries(apiSum);
@@ -28,13 +77,11 @@ const Summary = ({ apiSum, setApiSum }) => {
   const raceDataNext = raceData[1];
   const ageDataNext = ageData[1];
   const genderDataNext = genderData[1];
+  console.log(ageDataNext);
+  const ageDataEntries = Object.entries(ageDataNext)
 
   
   
-  const ageDataEntries = Object.entries(ageDataNext).sort(
-      ([ageA, valueA], [ageB, valueB]) => valueB - valueA
-      
-    );
   const sortedGenderDataEntries = Object.entries(genderDataNext).sort(
       ([genderA, valueA], [genderB, valueB]) => valueB - valueA
       
@@ -45,7 +92,9 @@ const Summary = ({ apiSum, setApiSum }) => {
     );
 const [raceName, confidenceValue] = sortedRaceDataEntries[activeIndex];
 const [age, confidenceValueA] = ageDataEntries[activeIndexAge];
-const [gender, confidenceValueG] = sortedGenderDataEntries[activeIndexG];
+console.log
+(ageDataEntries[activeIndex])
+const [gender, confidenceValueG] = sortedGenderDataEntries[activeIndex];
 const handleListClick = (index) => {
   setActiveIndex(index);
 };
@@ -63,7 +112,7 @@ const handleListClick3 = (index) => {
   const strokeDashoffset2 =
     circumference - (confidenceValueA) * circumference;
   const strokeDashoffset3 =
-    circumference - (confidenceValueG) * circumference;
+    circumference - (confidenceValue) * circumference;
     
 
   return (
@@ -96,72 +145,13 @@ const handleListClick3 = (index) => {
              className={`${activeBox === 2 ? "active sidebar-item" : "sidebar-item item-2"}`}
         onClick={() => handleBoxClick(2)}
           >
-            <span className="value">{gender}</span>
+            <span className="value">{"male"}</span>
             <span className="label">SEX</span>
           </div>
         </aside>
 
         <main className="main-content">
-          {activeBox === 2 ?
-          
-          <div className="chart-section">
-            <div className="donut-chart-container">
-              <div className="selected-race--display">
-                <div className="predicted-race-display">
-                  <span>{gender}</span>
-                </div>
-              </div>
-              <svg className="donut-chart" viewBox="0 0 100 100">
-                <circle
-                  className="donut-chart-background"
-                  cx="50"
-                  cy="50"
-                  r="45"
-                ></circle>
-                <circle
-                  className="donut-chart-segment"
-                  cx="50"
-                  cy="50"
-                  r="45"
-                  strokeDasharray={circumference}
-                  strokeDashoffset={strokeDashoffset3}
-                ></circle>
-              </svg>
-              <span className="confidence-percentage">
-                {(confidenceValueG *100).toFixed(0)}%
-              </span>
-            </div>
-            <div className="confidence-list-section">
-              <div className="confidence-header">
-                <span>RACE</span>
-                <span>AI CONFIDENCE</span>
-              </div>
-              <ul className="confidence-list">
-                {sortedGenderDataEntries
-                .map(([name,value], index) => {
-
-            const percentage = value * 100;
-          const formattedPercentage = percentage.toFixed(0);
-          return(
-                  <div className="list__wrapper" key={index}>
-                    <li
-                      key={index}
-                         onClick={() => handleListClick3(index)}
-                className={activeIndexG === index ? "active-confidence-item" : ""}
-                    >
-                      <span className="list-icon">◇</span>
-                      <span> {name}</span>
-                      <span className="number__confidence">
-                        {formattedPercentage}%
-                      </span>
-                    </li>
-                  </div>
-)})}
-              </ul>
-            </div>
-          </div>
-          :
-          (activeBox === 0 ? <div className="chart-section">
+          {activeBox === 0 ? <div className="chart-section">
             <div className="donut-chart-container">
               <div className="selected-race--display">
                 <div className="predicted-race-display">
@@ -274,7 +264,7 @@ const handleListClick3 = (index) => {
               </ul>
             </div>
           </div>
-  )}
+        }
         </main>
       </div>
     </div>

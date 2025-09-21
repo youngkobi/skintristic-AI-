@@ -101,3 +101,79 @@
     .back__button-camera .button__img{
         filter: invert(100%);
     }
+
+
+    @media(max-width:1250px){
+        .camera__button{
+    right: 1%;
+}
+.diamond-list{
+    width: 100%;
+    margin-left: 60%;
+    font-size: 12px;
+    
+}
+
+    }
+    @media(max-width:1000px){
+        .camera__button{
+    right: 1%;
+}
+.diamond-list{
+    width: 100%;
+    margin-left: 52%;
+    font-size: 12px;
+    
+}
+.picture__button--label{
+    right: 9%;
+}
+
+    }
+    @media(max-width:850px){
+        .camera__button{
+    right: 1%;
+}
+.diamond-list{
+    width: 100%;
+    margin-left: 45%;
+    font-size: 12px;
+    
+}
+.picture__button--label{
+    right: 10%;
+}
+
+    }
+    @media(max-width:680px){
+        .camera__button{
+    right: 1%;
+}
+.diamond-list{
+    width: 100%;
+    margin-left: 42%;
+    font-size: 10px;
+    bottom: 35%;
+    
+}
+.picture__button--label{
+    right: 12%;
+}
+
+    }
+    @media(max-width:500px){
+        .camera__button{
+    right: 1%;
+}
+.diamond-list{
+    width: 100%;
+    margin-left: 25%;
+    font-size: 10px;
+    bottom: 35%;
+    
+}
+.picture__button--label{
+    right: 16%;
+}
+
+    }

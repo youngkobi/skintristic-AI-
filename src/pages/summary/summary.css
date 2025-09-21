@@ -174,7 +174,7 @@ color: white;
   margin-right: 20px;
   border-top: solid 1px;
   align-self: flex-start;
-  padding: 20px 20px;
+  padding: 20px 24px 20px 10px;
   height: 51vh;
   
 
@@ -193,7 +193,6 @@ color: white;
   font-weight: bold;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
 }
 
 .confidence-list {
@@ -207,11 +206,12 @@ color: white;
   padding: 12px 0 12px 24px;
    justify-content:space-between;
    align-items: center;
+   width: 100%;
 }
 
 
 .number__confidence{
-    
+    padding-right: 10px;
 }
 .confidence-list li:first-child .list-icon {
   position: absolute;
@@ -229,7 +229,8 @@ color: white;
 
 .active-confidence-item {
     font-weight: bold;
-    color: #000; /* Or a highlight color */
+    color: white; /* Or a highlight color */
+    background-color: black;
 }
 
 
@@ -248,4 +249,31 @@ color: white;
 .item-3{
     background-color: #F3F3F4;
     color: black;
+}
+
+
+@Media(max-width:1250px){
+    .donut-chart-container {
+  width: 700px; /* Reduced from 150px */
+  height:400px; /* Reduced from 150px */
+  
+}
+}
+@Media(max-width:950px){
+    .donut-chart-container {
+  width: 600px; /* Reduced from 150px */
+  height:400px; /* Reduced from 150px */
+  
+}
+}
+@Media(max-width:750px){
+    .donut-chart-container {
+  width: 400px; /* Reduced from 150px */
+  height:400px; /* Reduced from 150px */
+  
+}
+.confidence-list-section {
+  padding: 10px 0px 10px 5px;
+}
+
 }

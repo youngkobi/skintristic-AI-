@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import "./select.css"
 import { useNavigate } from 'react-router-dom';
+import button from "../../assets/buttin-icon-shrunk.svg";
+
 
 const Select = () => {
     const [boxxy, setBoxxy] = useState(false);
@@ -38,6 +40,53 @@ Fix estimated information if needed.</p>
       </div>
     </div>
    <div className={`hover__dotted ${boxxy ? "hover__dotted--active" : ""}`}></div>
+     <div className="bottom__buttons"> 
+    <div
+          className="back__button"
+        >
+         
+          <div  >
+
+          <img
+            src={button}
+            alt=""
+            className="button__img"
+            onClick={() => navigate("/capture")}
+          
+          />
+
+          </div>
+           <div
+         
+           onClick={() => navigate("/capture")} className="back">
+            Back
+          </div>
+        </div>
+    <div
+          className="progo__button"
+        >
+          <div
+           onClick={() => navigate("/capture")} className="back">
+            Get Summary
+          </div>
+          <div  data-aos="slide-right"
+          data-aos-duration="3000"
+          data-aos-delay="50"
+          data-aos-offset="20"
+          >
+            
+          <img
+            src={button}
+            alt=""
+            className="button__flip"
+            onClick={() => navigate("/summary")}
+          
+          />
+
+          </div>
+        </div>
+        </div>
+        
     </>
   );
 };

@@ -6,6 +6,8 @@ import gallery from "../../assets/gallery-icon.png";
 import camera from "../../assets/camera-icon.png";
 import Camera from "../../ccomponents/Camera";
 import { useNavigate } from "react-router-dom";
+import button from "../../assets/buttin-icon-shrunk.svg";
+
 import axios from "axios";
 
 const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
@@ -29,27 +31,29 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
     };
     axios.post(apiUrl, postData).then((response) => {
   const summary = response.data
-      setResponseData(summary)
+      setResponseData(summary.data)
     } 
   );
   }
 
-  useEffect(() => {
-    if (base64String) {
-      proccesing();
-    }
-     if (responseData) {
-      setTimeout(() => {
-        setAnalyze(false);
-        navigate("/select");
-      setApiSum(responseData)
-      alert("Image anaylzed Succesfully!")
-     
-      
+ useEffect(() => {
+if (responseData) {
+const timer = setTimeout(() => {
+setAnalyze(false);
+setApiSum(responseData);
+alert("Image analyzed successfully!");
+navigate("/select");
+}, 2000);
+return () => clearTimeout(timer); // cleanup if responseData changes
+}
+}, [responseData, navigate, setApiSum]);
 
-      }, 2000);
-    }
-  }, [base64String, responseData]);
+
+useEffect(() => {
+if (base64String) {
+proccesing();
+}
+}, [base64String]);
  
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -107,8 +111,10 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
               <Spinningboxes box1={"402px"} box2={"452px"} box3={"502px"} />
               {base64String && (
         <div style={{ marginTop: "20px" }}>
-          <h3>Image Preview:</h3>
-          <img src={imagePreviewUrl} alt="Preview" style={{ maxWidth: '300px' }} /> 
+          <h3 className="img__preview-title">Image Preview:</h3>
+          <img src={imagePreviewUrl} 
+          className='preview__image'
+          alt="Preview" style={{ maxWidth: '300px' }} /> 
         </div>
       )}
             </>
@@ -194,9 +200,30 @@ const Capture = ({ cameraImg, setCameraImg, setApiSum, apiSum }) => {
             </div>
           )}
         </div>
+        <div
+          className="back__button-capture"
+        >
+         
+          <div  >
+
+          <img
+            src={button}
+            alt=""
+            className="button__img"
+            onClick={() => navigate("/introduce")}
+          
+          />
+
+          </div>
+           <div
+         
+           onClick={() => navigate("/introduce")} className="back">
+            Back
+          </div>
+        </div>
       </div>
 
-      
+        
     </div>
   );
 };
